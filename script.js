@@ -2,7 +2,6 @@ var clicks = 0;
 var counter = document.getElementById("clicks");
 var overlay = document.getElementById("overlay");
 var startButton = document.getElementById("start");
-var resetButton = document.getElementById("reset");
 var stopButton = document.getElementById("stop");
 var counting = false;
 

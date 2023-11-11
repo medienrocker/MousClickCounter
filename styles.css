@@ -1,55 +1,70 @@
+:root {
+    --clr-link: #4c70af;
+    --clr-linkActive: #2b436b;
+    --clr-bg1: #f2f2f2;
+}
+
 body {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--clr-bg1);
     font-family: 'Roboto', sans-serif;
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-align: center;
     margin-top: 2rem;
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #0ff, 0 0 70px #0ff, 0 0 80px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+    margin-bottom: 1rem;
 }
 
 p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 #clicks {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
     text-align: center;
     display: block;
-    margin-top: 2rem;
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #0ff, 0 0 70px #0ff, 0 0 80px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 #overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
 }
 
 button {
-    font-size: 2rem;
-    padding: 1rem 2rem;
-    margin: 1rem;
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+    margin: 0 1rem;
     border: none;
     border-radius: 2rem;
-    background-color: #0ff;
-    color: #000;
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #0ff, 0 0 70px #0ff, 0 0 80px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+    background-color: var(--clr-link);
+    color: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #fff;
-    color: #000;
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #0ff, 0 0 70px #0ff, 0 0 80px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
-    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff, 0 0 70px #0ff, 0 0 80px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+    background-color: var(--clr-linkActive);
+}
+
+@media screen and (max-width: 373px) {
+    #overlay {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+    button {
+        margin-top: .5rem;
+    }
 }
