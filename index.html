@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mouse-Click-Zähler</title>
+    
+</head>
+
+<body>
+    <h1>Mouse-Click-Zähler</h1>
+    <p>Anzahl der Klicks: <span id="clicks">0</span></p>
+    <div id="overlay">
+        <button id="start" onclick="incrementClickCount()">Zähler START</button>
+        <button id="reset" onclick="resetClickCount()">Reset</button>
+        <button id="pause" onclick="togglePause()">Zählen PAUSE</button>
+    </div>
+
+    <script>
+        var clickCount = 0;
+        var isPaused = false;
+
+        function updateClickCount() {
+            document.getElementById("clicks").innerHTML = clickCount;
+        }
+
+        function incrementClickCount() {
+            if (!isPaused) {
+                clickCount++;
+                updateClickCount();
+            }
+        }
+
+        function togglePause() {
+            isPaused = !isPaused;
+            var pauseButton = document.getElementById("pause");
+            if (isPaused) {
+                pauseButton.innerHTML = "Zählen weiter";
+                pauseButton.style.backgroundColor = "gold";
+            } else {
+                pauseButton.innerHTML = "Zählen PAUSE";
+                pauseButton.style.backgroundColor = "";
+            }
+        }
+
+        function resetClickCount() {
+            clickCount = 0;
+            updateClickCount();
+        }
+    </script>
+</body>
+
+</html>
