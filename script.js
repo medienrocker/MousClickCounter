@@ -3,7 +3,9 @@ var counter = document.getElementById("clicks");
 var overlay = document.getElementById("overlay");
 var startButton = document.getElementById("start");
 var stopButton = document.getElementById("stop");
+var pauseButton = document.getElementById("pause");
 var counting = false;
+var isPaused = false;
 
 function incrementCounter() {
     clicks++;
@@ -11,9 +13,11 @@ function incrementCounter() {
 }
 
 function startCounting() {
-    if (!counting) {
+    if (!counting && !isPaused) {
         counting = true;
-        //overlay.style.display = "none";
+        startButton.classList.add("mc_active");
+        pauseButton.style.display = "";
+        pauseButton.innerHTML = "PAUSE";
         document.addEventListener("click", incrementCounter);
         clicks = -1;
     }
@@ -21,8 +25,33 @@ function startCounting() {
 
 function stopCounting() {
     counting = false;
-    //overlay.style.display = "block";
+    isPaused = false;
+    startButton.classList.remove("mc_active");
+    pauseButton.style.display = "none";
+    pauseButton.classList.remove("mc_pause");
     document.removeEventListener("click", incrementCounter);
+}
+
+function togglePause() {
+    isPaused = !isPaused;
+    if (isPaused) {
+        pauseButton.innerHTML = "...weiter";
+        //pauseButton.style.backgroundColor = "gold";
+        pauseButton.classList.add("mc_pause");
+        startButton.classList.remove("mc_active");
+        document.removeEventListener("click", incrementCounter);
+    } else {
+        document.addEventListener("click", incrementCounter);
+        clicks -= 1;
+        startButton.classList.add("mc_active");
+        pauseButton.innerHTML = "PAUSE";
+        pauseButton.classList.remove("mc_pause");
+    }
+    console.log("isPaused = " + isPaused);
+}
+
+function resetPause() {
+    
 }
 
 startButton.addEventListener("click", startCounting);

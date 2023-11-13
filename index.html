@@ -8,17 +8,21 @@
     <style>
         /* Add your retro-futuristic CSS styles here */
     </style>
-    
+
 </head>
 
 <body>
-    <h1>Mouse-Click-Zähler</h1>
-    <p>Anzahl der Klicks: <span id="clicks">0</span></p>
-    <div id="overlay">
-        <button id="start">START</button>
-        <button id="stop">STOP</button>
+    <div id="mc_wrapper">
+        <div id="mc_header">
+            <h1>Mouse-Click-Zähler</h1>
+        </div>
+        <p class="mc_clicks">Anzahl der Klicks: <span id="clicks">0</span></p>
+        <div id="overlay">
+            <button id="start" class="">START</button>
+            <button id="stop" class="">STOP</button>
+            <button id="pause" class="" onclick="togglePause()" style="display: none;">PAUSE</button>
+        </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 

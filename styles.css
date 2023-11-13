@@ -1,19 +1,27 @@
 :root {
+    --clr-textMain: #333;
     --clr-link: #4c70af;
     --clr-linkActive: #2b436b;
     --clr-bg1: #f2f2f2;
+    --clr-bg2: rgb(21, 177, 21);
+    --clr-bg3: gold;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
     background-color: var(--clr-bg1);
     font-family: 'Roboto', sans-serif;
+    column-rule: var(--clr-textMain);
 }
 
 h1 {
     font-size: 2.5rem;
     text-align: center;
-    margin-top: 2rem;
     margin-bottom: 1rem;
+    color: white;
 }
 
 p {
@@ -34,26 +42,60 @@ p {
 
 #overlay {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     margin: 1rem;
     padding: 1rem;
 }
 
+#mc_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 500px;
+    margin: 10px auto;
+    border: 1px solid ;
+    border-radius: 10px;
+}
+
+#mc_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, var(--clr-linkActive), var(--clr-link));
+    border-radius: 9px 9px 0 0;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
 button {
     font-size: 1.5rem;
+    font-weight: bold;
     padding: .5rem 1rem;
     margin: 0 1rem;
-    border: none;
-    border-radius: 2rem;
-    background-color: var(--clr-link);
-    color: #fff;
+    border: 2px solid var(--clr-link);
+    border-radius: 10px;
+    background-color: white;
+    color: #333;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+}
+
+.mc_active {
+    background-color: var(--clr-bg2);
+    color: white;
+    font-weight: bold;
+}
+
+.mc_pause {
+    background-color: var(--clr-bg3);
+    color: var(--clr-textMain);
+    font-weight: bold;
 }
 
 button:hover {
     background-color: var(--clr-linkActive);
+    color: white;
 }
 
 @media screen and (max-width: 373px) {
